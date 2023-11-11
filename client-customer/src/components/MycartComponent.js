@@ -39,7 +39,7 @@ class Mycart extends Component {
     });
     return (
       <div className="align-center">
-        <h2 className="text-center">ITEM LIST</h2>
+        <h2 className="text-center">DANH SÁCH SẢN PHẨM</h2>
         <table className="datatable" border="1">
           <tbody>
             <tr className="datatable">
