@@ -4,6 +4,7 @@ import CartUtil from "../utils/CartUtil";
 import axios from "axios";
 import withRouter from "../utils/withRouter";
 import "../components/style/Mycart.scss";
+import { Navigate } from "react-router-dom";
 
 class Mycart extends Component {
   static contextType = MyContext; // using this.context to access global state
@@ -38,34 +39,43 @@ class Mycart extends Component {
       );
     });
     return (
-      <div className="align-center">
-        <h2 className="text-center">DANH SÁCH SẢN PHẨM</h2>
-        <table className="datatable" border="1">
-          <tbody>
-            <tr className="datatable">
-              <th>Số Thứ Tự</th>
-              <th>Mã ID</th>
-              <th>Tên</th>
-              <th>Loại</th>
-              <th>Ảnh</th>
-              <th>Giá</th>
-              <th>Số Lượng</th>
-              <th>Tổng Cộng</th>
-              <th>Kiểm Tra</th>
-            </tr>
-            {mycart}
-            <tr>
-              <td colSpan="6"></td>
-              <td>Total</td>
-              <td>{CartUtil.getTotal(this.context.mycart)}</td>
-              <td>
-                <span className="link" onClick={() => this.lnkCheckoutClick()}>
-                  CHECKOUT
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+       <div className="warapper-mycart">
+        {mycart == "" ? (
+          <Navigate replace to="/" />
+        ) : (
+          <div className="align-center">
+            <h2 className="text-center">DANH SÁCH SẢN PHẨM</h2>
+            <table className="datatable" border="1">
+              <tbody>
+                <tr className="datatable">
+                  <th>Số Thứ Tự</th>
+                  <th>Mã ID</th>
+                  <th>Tên</th>
+                  <th>Loại</th>
+                  <th>Ảnh</th>
+                  <th>Giá</th>
+                  <th>Số Lượng</th>
+                  <th>Tổng Cộng</th>
+                  <th>Kiểm Tra</th>
+                </tr>
+                {mycart}
+                <tr>
+                  <td colSpan="6"></td>
+                  <td>Total</td>
+                  <td>{CartUtil.getTotal(this.context.mycart)}</td>
+                  <td>
+                    <span
+                      className="link"
+                      onClick={() => this.lnkCheckoutClick()}
+                    >
+                      CHECKOUT
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     );
   }
