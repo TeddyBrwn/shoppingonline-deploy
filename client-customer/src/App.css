@@ -238,3 +238,6 @@ span.link:hover{
 .name-customer{
   font-size: 2rem;
 }
+.input-amount:focus-visible{
+  outline: none;
+}
