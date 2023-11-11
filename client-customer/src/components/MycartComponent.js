@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import MyContext from "../contexts/MyContext";
 import CartUtil from "../utils/CartUtil";
@@ -61,7 +62,7 @@ class Mycart extends Component {
                 {mycart}
                 <tr>
                   <td colSpan="6"></td>
-                  <td>Total</td>
+                  <td>Tổng cộng</td>
                   <td>{CartUtil.getTotal(this.context.mycart)}</td>
                   <td>
                     <span
