@@ -28,7 +28,7 @@ class Home extends Component {
             <figcaption className="text-center">
               {item.name}
               <br />
-              Price: {item.price}
+              Giá từ {item.price}
             </figcaption>
           </figure>
         </div>
@@ -49,7 +49,7 @@ class Home extends Component {
             <figcaption className="text-center">
               {item.name}
               <br />
-              Price: {item.price}
+              Giá từ {item.price}
             </figcaption>
           </figure>
         </div>
